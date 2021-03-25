@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_032310) do
     t.string "title"
     t.integer "number_of_pages"
     t.boolean "digital"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "manufacturers", force: :cascade do |t|
