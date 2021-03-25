@@ -1,0 +1,4 @@
+class Manufacturer < ApplicationRecord
+
+  
+end
