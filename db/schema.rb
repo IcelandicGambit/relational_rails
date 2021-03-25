@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_032310) do
+ActiveRecord::Schema.define(version: 2021_03_25_225458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_032310) do
     t.boolean "has_rack_mount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "manufacturers_id"
+    t.index ["manufacturers_id"], name: "index_bicycles_on_manufacturers_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -47,4 +49,5 @@ ActiveRecord::Schema.define(version: 2021_03_25_032310) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bicycles", "manufacturers", column: "manufacturers_id"
 end
