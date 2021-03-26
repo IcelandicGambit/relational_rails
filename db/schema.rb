@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_232149) do
     t.boolean "has_rack_mount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "manufacturers_id"
-    t.index ["manufacturers_id"], name: "index_bicycles_on_manufacturers_id"
+    t.bigint "manufacturer_id"
+    t.index ["manufacturer_id"], name: "index_bicycles_on_manufacturer_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -51,6 +51,6 @@ ActiveRecord::Schema.define(version: 2021_03_25_232149) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bicycles", "manufacturers", column: "manufacturers_id"
+  add_foreign_key "bicycles", "manufacturers"
   add_foreign_key "books", "authors", column: "authors_id"
 end
