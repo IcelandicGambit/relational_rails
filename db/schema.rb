@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2021_03_25_232149) do
     t.boolean "digital"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "authors_id"
-    t.index ["authors_id"], name: "index_books_on_authors_id"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_books_on_author_id"
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -52,5 +52,5 @@ ActiveRecord::Schema.define(version: 2021_03_25_232149) do
   end
 
   add_foreign_key "bicycles", "manufacturers"
-  add_foreign_key "books", "authors", column: "authors_id"
+  add_foreign_key "books", "authors"
 end
