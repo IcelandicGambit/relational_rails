@@ -1,4 +1,4 @@
 class Bicycle < ApplicationRecord
-  belongs_to :manufacturers
+  belongs_to :manufacturer
 
 end
