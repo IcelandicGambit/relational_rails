@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/manufacturers', to: 'manufacturers#index'
   get '/manufacturers/:id', to: 'manufacturers#show'
+  get '/manufacturers/:id/child_listing', to: 'manufacturers#child_listing'
   get '/bicycles/', to: 'bicycles#index'
   get '/bicycles/:id', to: 'bicycles#show'
   get '/authors', to: 'authors#index'
