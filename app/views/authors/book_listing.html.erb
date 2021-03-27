@@ -1,3 +1,10 @@
+<header>
+  <nav>
+    <%= link_to "All Authors", "/authors" %>
+    <%= link_to "All Books", "/books" %>
+  </nav>
+</header>
+
 <a href="/authors/"<% (@book_listing[0].author_id)%>"> Go Back</a>
 <% @book_listing.each do |book|%>
     <p>Title: <%=book.title%></p>
