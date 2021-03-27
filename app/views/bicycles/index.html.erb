@@ -1,1 +1,8 @@
 <h1>Bicycles</h1>
+<% @bicycles.each do |bicycle| %>
+  <h3><a href="/bicycles/<%= bicycle.id %>"><%= bicycle.model %></a></h3>
+  <p>Manufacturer: <%= Manufacturer.find(bicycle.manufacturer_id).name %></p>
+  <p>Price: <%= bicycle.price %></p>
+  <p>Has a rack mount?: <%= bicycle.has_rack_mount %></p>
+  
+<% end %>

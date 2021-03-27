@@ -1,0 +1,9 @@
+<h1>Bikes Made by <%= Manufacturer.find(@bike_listing[1].manufacturer_id).name%></h1>
+<a href="/manufacturers/<%= (@bike_listing[1].manufacturer_id)%>">Go Back</a>
+<% @bike_listing.each do |bike| %>
+  <p>Model: <%=bike.model%></p>
+  <p>Price: <%= bike.price %></p>
+  <p>Has a rack mount?: <%= bike.has_rack_mount %></p> <br>
+<% end %>
+
+

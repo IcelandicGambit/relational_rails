@@ -1,4 +1,5 @@
-<a href="/manufacturer">Manufacturer Index</a>
-<p><%= @manufacturer.name %></p>
-<p><%= @manufacturer.year_founded %></p>
-<p><%= @manufacturer.manufactured_in_us? %></p>
+<a href="/manufacturers">Manufacturer Index</a>
+<p>Name: <%= @manufacturer.name %></p>
+<p>Year founded: <%= @manufacturer.year_founded %></p>
+<p>Manufactured in United States: <%= @manufacturer.manufactured_in_us? %></p>
+<a href="/manufacturers/<%= @manufacturer.id %>/child_listing">Bikes made by <%= @manufacturer.name %> </a>
