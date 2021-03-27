@@ -9,6 +9,8 @@ class ManufacturersController < ApplicationController
   end
 
   def child_listing
+    binding.pry 
+    @manufacturer = Manufacturer.find(params[:id])
     @bike_listing = Bicycle.where(manufacturer_id: params[:id])
   end
 end
