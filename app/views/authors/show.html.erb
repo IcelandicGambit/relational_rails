@@ -4,12 +4,14 @@
     <%= link_to "All Books", "/books" %>
   </nav>
 </header>
-
-<a href="/authors">Author Index</a>
+<body>
 <p><%= @author.name %></p>
 <p><%= @author.age %></p>
 <p><%= @author.is_alive? %></p> 
-
 <p>Number of Books: <%= @author.count_books %></p>
+<a href="/authors/<%= @author.id %>'/book_listing"> Books Written By <%= @author.name %> </a>
+</body>
+
+
 
 
