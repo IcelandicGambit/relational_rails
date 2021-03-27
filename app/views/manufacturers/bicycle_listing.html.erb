@@ -1,3 +1,10 @@
+<header>
+  <nav>
+    <%= link_to "All Manufacturers", "/manufacturers" %>
+    <%= link_to "All Bicycles", "/bicycles" %>
+  </nav>
+</header>
+<body>
 <h1>Bikes Made by <%= @manufacturer.name%></h1>
 <a href="/manufacturers/<%= (@manufacturer.id)%>">Go Back</a>
 <% @bike_listing.each do |bike| %>
@@ -5,5 +12,5 @@
   <p>Price: <%= bike.price %></p>
   <p>Has a rack mount?: <%= bike.has_rack_mount %></p> <br>
 <% end %>
-
+</body>
 

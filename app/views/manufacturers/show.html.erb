@@ -1,6 +1,13 @@
-<a href="/manufacturers">Manufacturer Index</a>
+<header>
+  <nav>
+    <%= link_to "All Manufacturers", "/manufacturers" %>
+    <%= link_to "All Bicycles", "/bicycles" %>
+  </nav>
+</header>
+<body>
 <p>Name: <%= @manufacturer.name %></p>
 <p>Year founded: <%= @manufacturer.year_founded %></p>
 <p>Manufactured in United States: <%= @manufacturer.manufactured_in_us? %></p>
 <p>Number of bikes from this manufacturer: <%= @manufacturer.count_by_manufacturer%> </p>
 <a href="/manufacturers/<%= @manufacturer.id %>/child_listing">Bikes made by <%= @manufacturer.name %> </a>
+</body>

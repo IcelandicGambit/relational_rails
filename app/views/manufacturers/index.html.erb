@@ -1,3 +1,10 @@
+<header>
+  <nav>
+    <%= link_to "All Manufacturers", "/manufacturers" %>
+    <%= link_to "All Bicycles", "/bicycles" %>
+  </nav>
+</header>
+<body>
 <h1>Manufacturers</h1>
 <% @manufacturers.each do |manufacturer| %>
   <h3><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></a></h3>
