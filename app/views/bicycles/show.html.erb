@@ -1,4 +1,11 @@
-<a href="/bicycles">Bicycles Index</a>
+<header>
+  <nav>
+    <%= link_to "All Manufacturers", "/manufacturers" %>
+    <%= link_to "All Bicycles", "/bicycles" %>
+  </nav>
+</header>
+<body>
 <p>Manufacturer: <%= Manufacturer.find(@bicycle.manufacturer_id).name %></p>
   <p>Price: <%= @bicycle.price %></p>
   <p>Has a rack mount?: <%= @bicycle.has_rack_mount %></p>
+</body>
