@@ -4,7 +4,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    # require 'pry';binding.pry
      @books = Book.find(params[:id])
   end
 end
