@@ -4,10 +4,12 @@
     <%= link_to "All Books", "/books" %>
   </nav>
 </header>
-
-<a href="/authors/"<% (@book_listing[0].author_id)%>"> Go Back</a>
+<body>
+<h1> Books Written By <%=@author.name%></h1>
+<a href="/authors/"<% (@author.id)%>"> Go Back</a>
 <% @book_listing.each do |book|%>
     <p>Title: <%=book.title%></p>
     <p>Number of Pages: <%=book.number_of_pages%></p>
     <p>Digital?: <%=book.digital%></p> <br>
     <% end %>
+</body>
