@@ -5,7 +5,8 @@
   </nav>
 </header>
 <body>
+<p>Model: <%= @bicycle.model %></p>
 <p>Manufacturer: <%= Manufacturer.find(@bicycle.manufacturer_id).name %></p>
-  <p>Price: <%= @bicycle.price %></p>
-  <p>Has a rack mount?: <%= @bicycle.has_rack_mount %></p>
+<p>Price: <%= @bicycle.price %></p>
+<p>Has a rack mount?: <%= @bicycle.has_rack_mount %></p>
 </body>
