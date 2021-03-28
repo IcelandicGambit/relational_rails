@@ -34,7 +34,7 @@ RSpec.describe "book views", type: :feature do
     expect(page).to have_content(b_1.digital)
     
     visit "/books/#{b_2.id}"
-    expect(page).to have_content(b_2.model)
+    expect(page).to have_content(b_2.title)
     expect(page).to have_content(a_2.name)
     expect(page).to have_content(b_2.number_of_pages)
     expect(page).to have_content(b_2.digital)
