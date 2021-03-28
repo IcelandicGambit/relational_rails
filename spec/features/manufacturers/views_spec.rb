@@ -75,5 +75,12 @@ RSpec.describe "manufacturers views", type: :feature do
     expect(page).to have_content(m_2.count_by_manufacturer)
   end
 
+  it "has  a link to create a new manufacturer " do
+    
+    visit "/manufacturers"
+
+    expect(page).to have_link("Add Manufacturer", :href=>"/manufacturers/new")
+  end
 
 end
+
