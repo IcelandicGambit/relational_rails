@@ -90,7 +90,5 @@ RSpec.describe "manufacturers views", type: :feature do
     expect(page).to have_field("manufacturer[year_founded]")
     expect(page).to have_field("manufacturer[manufactured_in_us?]")
   end
-  
-
 end
 
