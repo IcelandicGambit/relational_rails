@@ -82,5 +82,15 @@ RSpec.describe "manufacturers views", type: :feature do
     expect(page).to have_link("Add Manufacturer", :href=>"/manufacturers/new")
   end
 
+  it "has  a page to create a new manufacturer " do
+    
+    visit "/manufacturers/new"
+
+    expect(page).to have_field("manufacturer[name]")
+    expect(page).to have_field("manufacturer[year_founded]")
+    expect(page).to have_field("manufacturer[manufactured_in_us?]")
+  end
+  
+
 end
 
