@@ -48,4 +48,21 @@ RSpec.describe "authors views", type: :feature do
     expect(page).to have_content(b_3.digital)
    
   end
+
+  it "has  a link to create a new author " do
+    
+    visit "/authors"
+
+    expect(page).to have_link("Add Author", :href=>"/authors/new")
+  end
+
+  it "has  a page to create a new author " do
+    
+    visit "/authors/new"
+
+    expect(page).to have_field("author[name]")
+    expect(page).to have_field("author[age]")
+    expect(page).to have_field("author[is_alive?]")
+  end
+
 end
