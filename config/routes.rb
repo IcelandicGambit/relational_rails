@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/bicycles/', to: 'bicycles#index'
   get '/bicycles/:id', to: 'bicycles#show'
   get '/authors', to: 'authors#index'
+  get '/authors/new', to: 'authors#new'
+  post '/manufacturers', to: 'authors#add'
   get '/authors/:id', to: 'authors#show'
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
