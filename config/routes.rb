@@ -13,3 +13,5 @@ Rails.application.routes.draw do
   get '/books/:id', to: 'books#show'
   get '/authors/:id/book_listing', to: 'authors#book_listing'
 end
+
+#manufactures#add could be create action
