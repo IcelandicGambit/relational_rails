@@ -1,0 +1,12 @@
+<p>Author current name: <%=@author.name%></p>
+<p>Manufacturer current age: <%=@author.age%></p>
+<p>Manufacturer currently is alive?: <%=@author.is_alive?%></p><br>
+<%= form_with url:"/manufacturers/#{@author.id}", method: :patch, local: true do |form| %>
+  <%=form.label :name%>
+  <%=form.text_field :name%>
+  <%=form.label :age%>
+  <%=form.number_field :age%>
+  <%=form.label :is_alive?%>
+  <%= form.check_box :is_alive? %>
+  <%= form.submit 'Update Author' %>
+<% end %> 
