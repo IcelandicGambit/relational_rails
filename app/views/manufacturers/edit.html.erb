@@ -1,0 +1,12 @@
+<p>Manufacturer current name: <%=@manufacturer.name%></p>
+<p>Manufacturer current year founded: <%=@manufacturer.year_founded%></p>
+<p>Manufacturer current manufactured in US status: <%=@manufacturer.manufactured_in_us%></p><br>
+<%= form_with url:"/manufacturers/#{@manufacturer.id}", method: :patch, local: true do |form| %>
+  <%=form.label :name%>
+  <%=form.text_field :name%>
+  <%=form.label :year_founded%>
+  <%=form.number_field :year_founded%>
+  <%=form.label :manufactured_in_us%>
+  <%= form.check_box :manufactured_in_us %>
+  <%= form.submit 'Update Manufacturer' %>
+<% end %>
