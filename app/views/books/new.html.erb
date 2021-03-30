@@ -1,0 +1,9 @@
+<%= form_with url: "/authors/#{@author.id}/book_listing", method: :post, local: true do |form| %>
+<%=form.label :title%>
+<%=form.text_field :title%>
+<%=form.label :number_of_pages%>
+<%=form.number_field :number_of_pages%>
+<%=form.label :digital%>
+<%=form.check_box :digital %>
+<%=form.submit 'Create Book' %>
+<% end %> 
