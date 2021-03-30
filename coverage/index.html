@@ -14,7 +14,9 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
+
       <div class="timestamp">Generated <abbr class="timeago" title="2021-03-29T23:53:42-06:00">2021-03-29T23:53:42-06:00</abbr></div>
+
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +25,18 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
+
   100.0%
+
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
+
          1.1
+
        </span>
     </span> hits/line
     )
@@ -43,11 +49,13 @@
   </div>
 
   <div class="t-line-summary">
+
     <b>277</b> relevant lines,
     <span class="green"><b>277</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
+
 </span>
 )
   </div>
@@ -82,6 +90,7 @@
           </tr>
         
           <tr class="t-file">
+
             <td class="strong t-file__name"><a href="#9ce698be72fdde6084df04b055df2fd432f6b01c" class="src_link" title="app/controllers/authors_controller.rb">app/controllers/authors_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">15</td>
@@ -89,6 +98,7 @@
             <td class="cell--number">8</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.38</td>
+
             
           </tr>
         
@@ -115,6 +125,7 @@
           </tr>
         
           <tr class="t-file">
+
             <td class="strong t-file__name"><a href="#5f3d944cc609347475a276a4793e4ae3eb87a873" class="src_link" title="app/controllers/manufacturers_controller.rb">app/controllers/manufacturers_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">39</td>
@@ -122,6 +133,7 @@
             <td class="cell--number">21</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.48</td>
+
             
           </tr>
         
@@ -337,7 +349,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4c1597626a0b3850e0a97aa58a2b842a57d9c8de" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
+
             <td class="cell--number">17</td>
+
             <td class="cell--number">15</td>
             <td class="cell--number">15</td>
             <td class="cell--number">0</td>
@@ -370,9 +384,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#bca041136d31d17099c789ce1c574632e74fa3c0" class="src_link" title="spec/features/manufacturers/views_spec.rb">spec/features/manufacturers/views_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
+
             <td class="cell--number">111</td>
             <td class="cell--number">76</td>
             <td class="cell--number">76</td>
+
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -496,8 +512,8 @@
   <div class="header">
     <h3>app/controllers/authors_controller.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="red">
+  75.0%
 </span>
 
       lines covered
@@ -506,9 +522,9 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>12</b> relevant lines.
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -541,8 +557,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="3">
+            <span class="hits">2</span>
             
 
             
@@ -668,21 +684,11 @@
 
             
 
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
+
     </ol>
   </pre>
 </div>
@@ -714,100 +720,81 @@
   <pre>
     <ol>
       
+
         <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
+          <li class="covered" data-hits="1" data-linenumber="15">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">class BicyclesController &lt; ApplicationController</code>
+            <code class="ruby">    def add</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="16">
+            
             
 
             
 
-            <code class="ruby">  def index</code>
+            <code class="ruby">        author = Author.new({</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="17">
+            
             
 
             
 
-            <code class="ruby">    @bicycles = Bicycle.all</code>
+            <code class="ruby">            name: params[:author][:name],</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">            age: params[:author][:age],</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">            is_alive?: params[:author][:is_alive?]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="20">
+            
             
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">            })</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="7">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    @bicycle = Bicycle.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="missed" data-hits="0" data-linenumber="21">
             
             
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
 
-            
 
             <code class="ruby">end</code>
           </li>
@@ -952,8 +939,8 @@
   <div class="header">
     <h3>app/controllers/manufacturers_controller.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="red">
+  76.92%
 </span>
 
       lines covered
@@ -962,9 +949,11 @@
     
 
     <div class="t-line-summary">
+
       <b>21</b> relevant lines.
       <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
+
     </div>
 
     
@@ -1008,8 +997,10 @@
         </div>
       
         <div>
+
           <li class="covered" data-hits="5" data-linenumber="4">
             <span class="hits">5</span>
+
             
 
             
@@ -1136,6 +1127,8 @@
             
 
             <code class="ruby"></code>
+
+
           </li>
         </div>
       
@@ -4881,41 +4874,55 @@
           </li>
         </div>
       
+
         <div>
           <li class="never" data-hits="" data-linenumber="30">
             
+
             
 
             
+
 
             <code class="ruby"></code>
+
           </li>
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="31">
+
             <span class="hits">1</span>
             
 
             
+
 
             <code class="ruby">    expect(page).to have_content(b_1.model)</code>
+
           </li>
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="32">
+
             <span class="hits">1</span>
             
 
             
 
+
             <code class="ruby">    expect(page).to have_content(m_1.name)</code>
+
           </li>
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="33">
+
             <span class="hits">1</span>
             
 
@@ -4926,7 +4933,9 @@
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="34">
+
             <span class="hits">1</span>
             
 
@@ -4937,8 +4946,10 @@
         </div>
       
         <div>
+
           <li class="never" data-hits="" data-linenumber="35">
             
+
             
 
             
@@ -4948,7 +4959,9 @@
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="36">
+
             <span class="hits">1</span>
             
 
@@ -4959,7 +4972,9 @@
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="37">
+
             <span class="hits">1</span>
             
 
@@ -4970,7 +4985,9 @@
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="38">
+
             <span class="hits">1</span>
             
 
@@ -4981,7 +4998,9 @@
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="39">
+
             <span class="hits">1</span>
             
 
@@ -4992,7 +5011,9 @@
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="40">
+
             <span class="hits">1</span>
             
 
@@ -5003,8 +5024,10 @@
         </div>
       
         <div>
+
           <li class="never" data-hits="" data-linenumber="41">
             
+
             
 
             
@@ -5014,13 +5037,37 @@
         </div>
       
         <div>
+
           <li class="never" data-hits="" data-linenumber="42">
+
             
             
 
             
 
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">#manufactures#add could be create action</code>
           </li>
         </div>
       
@@ -5764,7 +5811,9 @@
 
             
 
+
             <code class="ruby">    expect(page).to have_content(m_1.name)</code>
+
           </li>
         </div>
       
@@ -5795,9 +5844,11 @@
             
             
 
+
             
 
             <code class="ruby">    </code>
+
           </li>
         </div>
       
@@ -5808,7 +5859,9 @@
 
             
 
+
             <code class="ruby">    visit &quot;/manufacturers/#{m_2.id}&quot;</code>
+
           </li>
         </div>
       
@@ -5819,7 +5872,9 @@
 
             
 
+
             <code class="ruby">    expect(page).to have_content(m_2.name)</code>
+
           </li>
         </div>
       
@@ -5830,7 +5885,9 @@
 
             
 
+
             <code class="ruby">    expect(page).to have_content(m_2.year_founded)</code>
+
           </li>
         </div>
       
@@ -5841,7 +5898,9 @@
 
             
 
+
             <code class="ruby">    expect(page).to have_content(m_2.manufactured_in_us)</code>
+
           </li>
         </div>
       
@@ -5850,9 +5909,11 @@
             
             
 
+
             
 
             <code class="ruby">  end</code>
+
           </li>
         </div>
       
@@ -5861,9 +5922,11 @@
             
             
 
+
             
 
             <code class="ruby"></code>
+
           </li>
         </div>
       
@@ -5874,7 +5937,9 @@
 
             
 
+
             <code class="ruby">  it &quot;can see all bicycles related to manufacturer&quot; do</code>
+
           </li>
         </div>
       
@@ -5885,13 +5950,17 @@
 
             
 
+
             <code class="ruby">    m_1 = Manufacturer.create!(name: &quot;Niner&quot;, year_founded: 1990, manufactured_in_us: true)</code>
+
           </li>
         </div>
       
         <div>
+
           <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
+
             
 
             
@@ -6748,7 +6817,9 @@
         </div>
       
         <div>
+
           <li class="never" data-hits="" data-linenumber="110">
+
             
             
 
@@ -6759,13 +6830,26 @@
         </div>
       
         <div>
+
           <li class="never" data-hits="" data-linenumber="111">
+
             
             
 
             
 
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="94">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
