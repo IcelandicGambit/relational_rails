@@ -13,7 +13,7 @@ RSpec.describe "authors views", type: :feature do
 
   it "can see attributes of an author" do
     a_1 = Author.create!(name: "Noam Chomsky", age: 92, is_alive: true)
-    a_2 = Author.create!(name: "James Joyce", age: 58   , is_alive: false)
+    a_2 = Author.create!(name: "James Joyce", age: 58, is_alive: false)
     visit "/authors/#{a_1.id}"
 
     expect(page).to have_content(a_1.name)
