@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/authors/new', to: 'authors#new'
   get '/authors/:id/edit', to: 'authors#edit'
   patch '/authors/:id', to: 'authors#update'
-  post '/authors', to: 'authors#add'
+  post '/authors', to: 'authors#create'
   get '/authors/:id', to: 'authors#show'
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
