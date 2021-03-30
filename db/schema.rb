@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_03_25_232149) do
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.boolean "is_alive?"
+    t.boolean "is_alive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

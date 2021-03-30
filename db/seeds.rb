@@ -29,14 +29,14 @@ bianchi.bicycles.create!(model: 'Zolder Pro', price: 3500,  has_rack_mount: true
 bianchi.bicycles.create!(model: 'Aria', price: 3500,  has_rack_mount: false)
 
 
-noam_chomsky = Author.create!(name: 'Noam Chomsky', age: 92, is_alive?: true)
-james_joyce = Author.create!(name: 'James Joyce', age: 58, is_alive?: false)
-gabriel_garcia_marquez = Author.create!(name: 'Gabriel Garcia Marquez', age: 87, is_alive?: false)
-david_berman = Author.create!(name: 'David Berman', age: 52, is_alive?: false)
-peter_kropotkin = Author.create!(name: 'Peter Kropotkin', age: 78, is_alive?: false)
-jennifer_egan = Author.create!(name: 'Jennifer Egan', age: 58, is_alive?: true)
-patrick_radden_keefe = Author.create!(name: 'Patrick Radden Keefe', age: 45, is_alive?: true)
-joan_didion = Author.create!(name: 'Joan Didion', age: 86, is_alive?: true)
+noam_chomsky = Author.create!(name: 'Noam Chomsky', age: 92, is_alive: true)
+james_joyce = Author.create!(name: 'James Joyce', age: 58, is_alive: false)
+gabriel_garcia_marquez = Author.create!(name: 'Gabriel Garcia Marquez', age: 87, is_alive: false)
+david_berman = Author.create!(name: 'David Berman', age: 52, is_alive: false)
+peter_kropotkin = Author.create!(name: 'Peter Kropotkin', age: 78, is_alive: false)
+jennifer_egan = Author.create!(name: 'Jennifer Egan', age: 58, is_alive: true)
+patrick_radden_keefe = Author.create!(name: 'Patrick Radden Keefe', age: 45, is_alive: true)
+joan_didion = Author.create!(name: 'Joan Didion', age: 86, is_alive: true)
 
 noam_chomsky.books.create!(title: 'Understanding Power', number_of_pages: 416,  digital: false)
 noam_chomsky.books.create!(title: 'Manufacturing Consent', number_of_pages: 480,  digital: false)
