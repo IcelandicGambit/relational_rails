@@ -6,7 +6,7 @@
 </header>
 <body>
 <h1>Manufacturers</h1>
-<h3><a href= "/manufacturers/new"> Add Manufacturer </a>
+<h3><%=link_to 'New Manufacturer', '/manufacturers/new'%>
 <% @manufacturers.each do |manufacturer| %>
   <h3><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></a></h3>
 <% end %>

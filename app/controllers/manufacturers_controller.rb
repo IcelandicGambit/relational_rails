@@ -17,13 +17,15 @@ class ManufacturersController < ApplicationController
 
   end
 
-  def add
-    manufacturer = Manufacturer.new({
-      name: params[:manufacturer][:name],
-      year_founded: params[:manufacturer][:year_founded],
-      manufactured_in_us?: params[:manufacturer][:manufactured_in_us?]
-      })
-    manufacturer.save
+  def create
+    binding.pry
+    Manufacturer.create(manufacturer_params)
     redirect_to '/manufacturers'
+  end
+
+  private
+  def manufacturer_params
+    params.permit(:name, :year_founded, :manufactured_in_us)
+   
   end
 end
