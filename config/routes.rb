@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/manufacturers/:id/bicycle_listing', to: 'bicycles#create'
   get '/bicycles/', to: 'bicycles#index'
   get '/bicycles/:id', to: 'bicycles#show'
+  get '/bicycles/:id/edit', to: 'bicycles#edit'
+  patch '/bicycles/:id', to: 'bicycles#update'
   get '/authors', to: 'authors#index'
   get '/authors/new', to: 'authors#new'
   get '/authors/:id/edit', to: 'authors#edit'
