@@ -31,9 +31,9 @@ class ManufacturersController < ApplicationController
     @manufacturer.update(manufacturer_params)
     redirect_to '/manufacturers'
   end
+
   private
   def manufacturer_params
     params.permit(:name, :year_founded, :manufactured_in_us)
-   
   end
 end
