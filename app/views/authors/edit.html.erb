@@ -1,7 +1,7 @@
 <p>Author current name: <%=@author.name%></p>
-<p>Manufacturer current age: <%=@author.age%></p>
-<p>Manufacturer currently is alive?: <%=@author.is_alive?%></p><br>
-<%= form_with url:"/manufacturers/#{@author.id}", method: :patch, local: true do |form| %>
+<p>Author current age: <%=@author.age%></p>
+<p>Author currently is alive?: <%=@author.is_alive?%></p><br>
+<%= form_with url:"/authors/#{@author.id}", method: :patch, local: true do |form| %>
   <%=form.label :name%>
   <%=form.text_field :name%>
   <%=form.label :age%>
