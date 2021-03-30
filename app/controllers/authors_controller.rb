@@ -34,7 +34,7 @@ class AuthorsController < ApplicationController
 
     private
     def author_params
-        params.permit(:name, :age, :is_alive?)
+        params.permit(:name, :age, :is_alive)
     end
 end
 
