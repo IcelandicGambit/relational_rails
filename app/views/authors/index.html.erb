@@ -9,4 +9,5 @@
 <h3><a href= "/authors/new"> Add Author </a>
 <% @authors.each do |author| %>
   <h3><a href="/authors/<%= author.id %>"><%= author.name %></a></h3>
+  <%= link_to 'Edit', "/authors/#{author.id}/edit"%>
 <% end %> 
