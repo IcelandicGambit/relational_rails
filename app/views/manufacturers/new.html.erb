@@ -1,13 +1,10 @@
-<form action="/manufacturers" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <h2>Add A Manufacturer</h2>
-  <label for="name">Manufacturer name:</label>
-  <input type='text' name='manufacturer[name]'/><br>
-  <label for="year_founded">Year founded:</label>
-  <input type="number" name='manufacturer[year_founded]'/> <br>
-  <label for="manufactured_in_us?">Manufactured_in_us?:</label>
-  <input type='text' name= 'manufacturer[manufactured_in_us?]'/><br>
-  <%# <input type="checkbox" name= 'manufacturer[manufactured_in_us?]'  class="inline checkbox" id="checkbox1" value="false"><br> %>
-  <%# If the checkbox doesn't work we can use a radio buttons with true and false %>
-  <input type='submit'/>
-</form>
+<%= form_with url: "/manufacturers", method: :post, local: true do |form| %>
+<%=form.label :name%>
+<%=form.text_field :name%>
+<%=form.label :year_founded%>
+<%=form.number_field :year_founded%>
+<%=form.label :manufactured_in_us%>
+<%= form.check_box :manufactured_in_us %>
+<%= form.submit 'Create Manufacturer' %>
+<% end %>
+

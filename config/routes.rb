@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/manufacturers', to: 'manufacturers#index'
   get '/manufacturers/new', to: 'manufacturers#new'
-  post '/manufacturers', to: 'manufacturers#add'
+  get '/manufacturers/:id/edit', to: 'manufacturers#edit'
+  patch '/manufacturers/:id', to: 'manufacturers#update'
+  post '/manufacturers', to: 'manufacturers#create'
   get '/manufacturers/:id', to: 'manufacturers#show'
   get '/manufacturers/:id/bicycle_listing', to: 'manufacturers#bicycle_listing'
   get '/bicycles/', to: 'bicycles#index'

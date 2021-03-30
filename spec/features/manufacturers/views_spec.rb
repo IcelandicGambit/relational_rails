@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "manufacturers views", type: :feature do
   it "can see all manufacturers" do
-    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us?: true)
-    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us?: false)
+    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
+    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us: false)
 
     visit "/manufacturers"
 
@@ -12,24 +12,24 @@ RSpec.describe "manufacturers views", type: :feature do
   end
 
   it "can see details of a manufacturer" do
-    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us?: true)
-    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us?: false)
+    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
+    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us: false)
 
     visit "/manufacturers/#{m_1.id}"
 
     expect(page).to have_content(m_1.name)
     expect(page).to have_content(m_1.year_founded)
-    expect(page).to have_content(m_1.manufactured_in_us?)
+    expect(page).to have_content(m_1.manufactured_in_us)
     
     visit "/manufacturers/#{m_2.id}"
     expect(page).to have_content(m_2.name)
     expect(page).to have_content(m_2.year_founded)
-    expect(page).to have_content(m_2.manufactured_in_us?)
+    expect(page).to have_content(m_2.manufactured_in_us)
   end
 
   it "can see all bicycles related to manufacturer" do
-    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us?: true)
-    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us?: false)
+    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
+    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us: false)
     b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: true)
     b_2 = m_2.bicycles.create!(model: "Bomber", price: 1922, has_rack_mount: false)
     b_3 = m_1.bicycles.create!(model: "Rove Ti", price: 1811, has_rack_mount: true)
@@ -54,8 +54,8 @@ RSpec.describe "manufacturers views", type: :feature do
   end
 
   it "it can display counted bicycles" do
-    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us?: true)
-    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us?: false)
+    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
+    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us: false)
     b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: true)
     b_2 = m_2.bicycles.create!(model: "Bomber", price: 1922, has_rack_mount: false)
     b_3 = m_1.bicycles.create!(model: "Rove Ti", price: 1811, has_rack_mount: true)
@@ -65,30 +65,47 @@ RSpec.describe "manufacturers views", type: :feature do
 
     expect(page).to have_content(m_1.name)
     expect(page).to have_content(m_1.year_founded)
-    expect(page).to have_content(m_1.manufactured_in_us?)
+    expect(page).to have_content(m_1.manufactured_in_us)
     expect(page).to have_content(m_1.count_by_manufacturer)
     
     visit "/manufacturers/#{m_2.id}"
     expect(page).to have_content(m_2.name)
     expect(page).to have_content(m_2.year_founded)
-    expect(page).to have_content(m_2.manufactured_in_us?)
+    expect(page).to have_content(m_2.manufactured_in_us)
     expect(page).to have_content(m_2.count_by_manufacturer)
   end
 
-  it "has  a link to create a new manufacturer " do
-    
-    visit "/manufacturers"
 
-    expect(page).to have_link("Add Manufacturer", :href=>"/manufacturers/new")
+  it 'I can create a new manufacturers' do
+
+    visit '/manufacturers'
+
+    click_link 'New Manufacturer'
+
+    expect(current_path).to eq('/manufacturers/new')
+
+    fill_in 'Name', with: 'Megan'
+    fill_in 'year_founded', with: '1922'
+    page.check 'Manufactured in us'
+    click_on 'Create Manufacturer'
+
+    expect(current_path).to eq("/manufacturers")
+    expect(page).to have_content('Megan')
   end
 
-  it "has  a page to create a new manufacturer " do
-    
-    visit "/manufacturers/new"
+    it 'I can update a manufacturer' do
+      m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
 
-    expect(page).to have_field("manufacturer[name]")
-    expect(page).to have_field("manufacturer[year_founded]")
-    expect(page).to have_field("manufacturer[manufactured_in_us?]")
-  end
+      visit '/manufacturers'
+
+      click_link 'Edit'
+
+      expect(current_path).to eq("/manufacturers/#{m_1.id}/edit")
+
+      fill_in 'Name', with: 'Tenner'
+      click_on 'Update Manufacturer'
+
+      expect(current_path).to eq("/manufacturers")
+      expect(page).to have_content('Tenner')
+    end
 end
-

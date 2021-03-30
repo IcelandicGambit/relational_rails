@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_232149) do
+ActiveRecord::Schema.define(version: 2021_03_30_050521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_03_25_232149) do
   create_table "manufacturers", force: :cascade do |t|
     t.string "name"
     t.integer "year_founded"
-    t.boolean "manufactured_in_us?"
+    t.boolean "manufactured_in_us"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
