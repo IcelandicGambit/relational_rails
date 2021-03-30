@@ -7,6 +7,7 @@
 <body>
 <h1> Books Written By <%=@author.name%></h1>
 <a href="/authors/"<% (@author.id)%>"> Go Back</a>
+<%= link_to 'Add Book', "/authors/#{@author.id}/book_listing/new"%>
 <% @book_listing.each do |book|%>
     <p>Title: <%=book.title%></p>
     <p>Number of Pages: <%=book.number_of_pages%></p>

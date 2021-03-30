@@ -19,7 +19,7 @@ class BooksController < ApplicationController
   end
 
   private
-  def bicycle_params
+  def book_params
     params.permit(:title, :number_of_pages, :digital)
   end
 end
