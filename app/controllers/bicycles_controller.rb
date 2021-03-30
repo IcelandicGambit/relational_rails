@@ -1,6 +1,6 @@
 class BicyclesController < ApplicationController
   def index
-    @bicycles = Bicycle.all
+    @bicycles = Bicycle.where(has_rack_mount: :true )
   end
 
   def show
