@@ -11,11 +11,11 @@ Book.destroy_all
 Author.destroy_all
 
 
-trek = Manufacturer.create!(name: 'Trek', year_founded: 1922, manufactured_in_us?: true)
-bianchi = Manufacturer.create!(name: 'Bianchi',  year_founded: 1888, manufactured_in_us?: false)
-motobecane = Manufacturer.create!(name: 'Motobecane',  year_founded: 1920,  manufactured_in_us?: false)
-lynskey = Manufacturer.create!(name: 'Lynskey',  year_founded: 1960,  manufactured_in_us?: true)
-kona = Manufacturer.create!(name: 'Kona',  year_founded: 1950,  manufactured_in_us?: true)
+trek = Manufacturer.create!(name: 'Trek', year_founded: 1922, manufactured_in_us: true)
+bianchi = Manufacturer.create!(name: 'Bianchi',  year_founded: 1888, manufactured_in_us: false)
+motobecane = Manufacturer.create!(name: 'Motobecane',  year_founded: 1920,  manufactured_in_us: false)
+lynskey = Manufacturer.create!(name: 'Lynskey',  year_founded: 1960,  manufactured_in_us: true)
+kona = Manufacturer.create!(name: 'Kona',  year_founded: 1950,  manufactured_in_us: true)
 
 trek.bicycles.create!(model: 'Wander Lust', price: 1200,  has_rack_mount: true)
 trek.bicycles.create!(model: 'Bomber', price: 2500,  has_rack_mount: false)

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "bicycles views", type: :feature do
   it "can see all bicycles" do
-    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us?: true)
-    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us?: false)
+    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
+    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us: false)
     b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: true)
     b_2 = m_2.bicycles.create!(model: "Bomber", price: 1922, has_rack_mount: false)
 
@@ -20,8 +20,8 @@ RSpec.describe "bicycles views", type: :feature do
   end
 
   it "can see details of a bicycle" do
-    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us?: true)
-    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us?: false)
+    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
+    m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us: false)
     b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: true)
     b_2 = m_2.bicycles.create!(model: "Bomber", price: 1922, has_rack_mount: false)
     
