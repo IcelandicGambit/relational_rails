@@ -1,0 +1,9 @@
+<%= form_with url: "/manufacturers/#{@manufacturer.id}/bicycle_listing", method: :post, local: true do |form| %>
+<%=form.label :model%>
+<%=form.text_field :model%>
+<%=form.label :price%>
+<%=form.number_field :price%>
+<%=form.label :has_rack_mount%>
+<%=form.check_box :has_rack_mount %>
+<%=form.submit 'Create Bicycle' %>
+<% end %>
