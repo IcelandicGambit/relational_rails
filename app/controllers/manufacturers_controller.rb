@@ -18,7 +18,6 @@ class ManufacturersController < ApplicationController
   end
 
   def create
-    binding.pry
     Manufacturer.create(manufacturer_params)
     redirect_to '/manufacturers'
   end

@@ -75,12 +75,6 @@ RSpec.describe "manufacturers views", type: :feature do
     expect(page).to have_content(m_2.count_by_manufacturer)
   end
 
-  it "has  a link to create a new manufacturer " do
-    
-    visit "/manufacturers"
-
-    expect(page).to have_link("Add Manufacturer", :href=>"/manufacturers/new")
-  end
 
   it 'I can create a new manufacturers' do
 
@@ -88,14 +82,14 @@ RSpec.describe "manufacturers views", type: :feature do
 
     click_link 'New Manufacturer'
 
-    expect(current_path).to eq('/manufacturer/new')
+    expect(current_path).to eq('/manufacturers/new')
 
     fill_in 'Name', with: 'Megan'
     fill_in 'year_founded', with: '1922'
-    find 'manufactured in us'.set(true)
+    page.check 'Manufactured in us'
     click_on 'Create Manufacturer'
 
-    expect(current_path).to eq("/manufacturer")
+    expect(current_path).to eq("/manufacturers")
     expect(page).to have_content('Megan')
   end
 end
