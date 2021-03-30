@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "authors views", type: :feature do
   it "can see all authors" do
-    a_1 = Author.create!(name: "Noam Chomsky", age: 92, is_alive?: true)
-    a_2 = Author.create!(name: "James Joyce", age: 58   , is_alive?: false)
+    a_1 = Author.create!(name: "Noam Chomsky", age: 92, is_alive: true)
+    a_2 = Author.create!(name: "James Joyce", age: 58   , is_alive: false)
 
     visit "/authors"
 
@@ -12,23 +12,23 @@ RSpec.describe "authors views", type: :feature do
   end
 
   it "can see attributes of an author" do
-    a_1 = Author.create!(name: "Noam Chomsky", age: 92, is_alive?: true)
-    a_2 = Author.create!(name: "James Joyce", age: 58   , is_alive?: false)
+    a_1 = Author.create!(name: "Noam Chomsky", age: 92, is_alive: true)
+    a_2 = Author.create!(name: "James Joyce", age: 58   , is_alive: false)
     visit "/authors/#{a_1.id}"
 
     expect(page).to have_content(a_1.name)
     expect(page).to have_content(a_1.age)
-    expect(page).to have_content(a_1.is_alive?)
+    expect(page).to have_content(a_1.is_alive)
     
     visit "/authors/#{a_2.id}"
     expect(page).to have_content(a_2.name)
     expect(page).to have_content(a_2.age)
-    expect(page).to have_content(a_2.is_alive?)
+    expect(page).to have_content(a_2.is_alive)
   end
 
   it "can see all books written by author" do
-    a_1 = Author.create!(name: "Noam Chomsky", age: 92, is_alive?: true)
-    a_2 = Author.create!(name: "James Joyce", age: 58   , is_alive?: false)
+    a_1 = Author.create!(name: "Noam Chomsky", age: 92, is_alive: true)
+    a_2 = Author.create!(name: "James Joyce", age: 58   , is_alive: false)
     b_1 = a_1.books.create!(title: "Understanding Power", number_of_pages: 416, digital: false)
     b_2 = a_1.books.create!(title: "Manufacturing Consent", number_of_pages: 480, digital: false)
     b_3 = a_2.books.create!(title: "Ulysses", number_of_pages: 730, digital: true)
@@ -62,7 +62,7 @@ RSpec.describe "authors views", type: :feature do
 
     expect(page).to have_field("author[name]")
     expect(page).to have_field("author[age]")
-    expect(page).to have_field("author[is_alive?]")
+    expect(page).to have_field("author[is_alive]")
   end
 
 end

@@ -16,7 +16,7 @@ class AuthorsController < ApplicationController
         author = Author.new({
             name: params[:author][:name],
             age: params[:author][:age],
-            is_alive?: params[:author][:is_alive?]
+            is_alive: params[:author][:is_alive]
             })
         author.save
         redirect_to '/authors'
@@ -34,7 +34,7 @@ class AuthorsController < ApplicationController
 
     private
     def author_params
-        params.permit(:name, :age, :is_alive?)
+        params.permit(:name, :age, :is_alive)
     end
 end
 
