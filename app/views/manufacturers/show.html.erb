@@ -9,5 +9,6 @@
 <p>Year founded: <%= @manufacturer.year_founded %></p>
 <p>Manufactured in United States: <%= @manufacturer.manufactured_in_us %></p>
 <p>Number of bikes from this manufacturer: <%= @manufacturer.count_by_manufacturer%> </p>
+<%= link_to 'Edit', "/manufacturers/#{@manufacturer.id}/edit"%>
 <a href="/manufacturers/<%= @manufacturer.id %>/bicycle_listing">Bikes made by <%= @manufacturer.name %> </a>
 </body>

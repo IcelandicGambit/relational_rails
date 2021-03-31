@@ -115,8 +115,8 @@ RSpec.describe "manufacturers views", type: :feature do
       b_3 = m_1.bicycles.create!(model: "Rove Ti", price: 1811, has_rack_mount: true)
 
       visit "/manufacturers/#{m_1.id}/bicycle_listing"
-      click_link 'Sort Bicycles'
-
+      click_link 'Sort '
+      expect(current_path).to eq("/manufacturers/#{m_1.id}/bicycle_listing/sorted")
       expect(page).to have_content(b_1.model)
       expect(page).to have_content(b_1.price)
       expect(page).to have_content(b_1.has_rack_mount)
