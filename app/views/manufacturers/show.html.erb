@@ -12,5 +12,5 @@
 <%= link_to 'Edit', "/manufacturers/#{@manufacturer.id}/edit"%>
 <%= button_to 'Delete', "/manufacturers/#{@manufacturer.id}", method: :delete %>
 
-<a href="/manufacturers/<%= @manufacturer.id %>/bicycle_listing">Bikes made by <%= @manufacturer.name %> </a>
+<a href="/manufacturers/<%= @manufacturer.id %>/bicycles">Bikes made by <%= @manufacturer.name %> </a>
 </body>

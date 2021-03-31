@@ -9,7 +9,7 @@ RSpec.describe "it can see bicycles specific to manufacturer", type: :feature do
     b_3 = m_1.bicycles.create!(model: "Rove Ti", price: 1811, has_rack_mount: true)
     b_4 = m_2.bicycles.create!(model: "Coiler", price: 1211, has_rack_mount: false)
 
-    visit "/manufacturers/#{m_1.id}/bicycle_listing"
+    visit "/manufacturers/#{m_1.id}/bicycles"
 
     expect(page).to have_content(b_1.model)
     expect(page).to have_content(b_1.price)

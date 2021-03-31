@@ -9,7 +9,7 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.find(params[:id])
   end
 
-  def bicycle_listing
+  def bicycles
     @manufacturer = Manufacturer.find(params[:id])
     @bike_listing = @manufacturer.bicycles
   end

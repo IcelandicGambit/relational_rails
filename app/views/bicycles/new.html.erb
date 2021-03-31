@@ -1,4 +1,4 @@
-<%= form_with url: "/manufacturers/#{@manufacturer.id}/bicycle_listing", method: :post, local: true do |form| %>
+<%= form_with url: "/manufacturers/#{@manufacturer.id}/bicycles", method: :post, local: true do |form| %>
 <%=form.label :model%>
 <%=form.text_field :model%>
 <%=form.label :price%>
