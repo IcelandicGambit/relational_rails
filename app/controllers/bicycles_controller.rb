@@ -1,6 +1,6 @@
 class BicyclesController < ApplicationController
   def index
-    @bicycles = Bicycle.all
+    @bicycles= Bicycle.has_rack
   end
 
   def show
@@ -27,7 +27,12 @@ class BicyclesController < ApplicationController
     @bicycle.update(bicycle_params)
     redirect_to "/bicycles/#{@bicycle.id}"
   end
+  def destroy
 
+    Bicycle.destroy(params[:id])
+    redirect_to '/bicycles'
+  end
+  
   private
   def bicycle_params
     params.permit(:model, :price, :has_rack_mount)

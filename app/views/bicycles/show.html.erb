@@ -10,4 +10,5 @@
 <p>Price: <%= @bicycle.price %></p>
 <p>Has a rack mount?: <%= @bicycle.has_rack_mount %></p>
 <%= link_to 'Edit', "/bicycles/#{@bicycle.id}/edit"%>
+<%= button_to 'Delete', "/bicycles/#{@bicycle.id}", method: :delete %>
 </body>
