@@ -1,0 +1,12 @@
+<p>Book Title: <%=@book.title%></p>
+<p>Book Number of Pages: <%=@book.number_of_pages%></p>
+<p>Book is in Digital format?: <%=@book.digital%></p><br>
+<%= form_with url:"/books/#{@book.id}", method: :patch, local: true do |form| %>
+  <%=form.label :title%>
+  <%=form.text_field :title%>
+  <%=form.label :number_of_pages%>
+  <%=form.number_field :number_of_pages%>
+  <%=form.label :digital%>
+  <%=form.check_box :digital %>
+  <%=form.submit 'Update Book' %>  
+<% end %>
