@@ -1,6 +1,7 @@
 class ManufacturersController < ApplicationController
 
   def index
+    
     @manufacturers = Manufacturer.all.order('created_at DESC')
   end
 
@@ -35,6 +36,16 @@ class ManufacturersController < ApplicationController
   def update
     @manufacturer = Manufacturer.find(params[:id])
     @manufacturer.update(manufacturer_params)
+    redirect_to '/manufacturers'
+  end
+
+  def destroy
+
+    bicycles= Manufacturer.find(params[:id]).bicycles
+    bicycles.each do |bicycle|
+      bicycle.destroy
+    end
+    Manufacturer.destroy(params[:id])
     redirect_to '/manufacturers'
   end
 

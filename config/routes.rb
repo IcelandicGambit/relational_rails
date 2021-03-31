@@ -10,10 +10,12 @@ Rails.application.routes.draw do
   get '/manufacturers/:id/bicycle_listing/sorted', to: 'manufacturers#sorted'
   get '/manufacturers/:id/bicycle_listing/new', to: 'bicycles#new'
   post '/manufacturers/:id/bicycle_listing', to: 'bicycles#create'
+  delete '/manufacturers/:id', to: 'manufacturers#destroy'
   get '/bicycles/', to: 'bicycles#index'
   get '/bicycles/:id', to: 'bicycles#show'
   get '/bicycles/:id/edit', to: 'bicycles#edit'
   patch '/bicycles/:id', to: 'bicycles#update'
+  delete '/bicycles/:id', to: 'bicycles#destroy'
 
 
   get '/authors', to: 'authors#index'
