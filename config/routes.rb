@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/manufacturers', to: 'manufacturers#create'
   get '/manufacturers/:id', to: 'manufacturers#show'
   get '/manufacturers/:id/bicycles', to: 'manufacturers#bicycles'
-  get '/manufacturers/:id/bicycles/sorted', to: 'manufacturers#sorted'
+  # get '/manufacturers/:manufacturer_id/bicycles', to: 'sorted#sorted'
   get '/manufacturers/:id/bicycles/new', to: 'bicycles#new'
   post '/manufacturers/:id/bicycles', to: 'bicycles#create'
   delete '/manufacturers/:id', to: 'manufacturers#destroy'

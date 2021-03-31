@@ -11,15 +11,14 @@ class ManufacturersController < ApplicationController
 
   def bicycles
     @manufacturer = Manufacturer.find(params[:id])
-    @bike_listing = @manufacturer.bicycles
+    if params[:sort] == "model"
+      @bike_listing = @manufacturer.bicycles.order(:model)
+    else
+      @bike_listing = @manufacturer.bicycles
+    end
   end
 
-  def sorted
-
-    @manufacturer = Manufacturer.find(params[:id])
-    @bike_listing = @manufacturer.bicycles.order(:model)
-  end
-
+  
   def new
 
   end

@@ -12,7 +12,6 @@ class BicyclesController < ApplicationController
   end
 
   def create
-    
     @manufacturer= Manufacturer.find(params[:id])
     @manufacturer.bicycles.create(bicycle_params)
     redirect_to "/manufacturers/#{@manufacturer.id}/bicycles"
