@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/manufacturers', to: 'manufacturers#create'
   get '/manufacturers/:id', to: 'manufacturers#show'
   get '/manufacturers/:id/bicycle_listing', to: 'manufacturers#bicycle_listing'
+  get '/manufacturers/:id/bicycle_listing/sorted', to: 'manufacturers#sorted'
   get '/manufacturers/:id/bicycle_listing/new', to: 'bicycles#new'
   post '/manufacturers/:id/bicycle_listing', to: 'bicycles#create'
   get '/bicycles/', to: 'bicycles#index'

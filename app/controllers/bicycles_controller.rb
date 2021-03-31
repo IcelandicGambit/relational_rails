@@ -28,6 +28,8 @@ class BicyclesController < ApplicationController
     redirect_to "/bicycles/#{@bicycle.id}"
   end
 
+ 
+
   private
   def bicycle_params
     params.permit(:model, :price, :has_rack_mount)

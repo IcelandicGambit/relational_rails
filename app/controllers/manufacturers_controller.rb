@@ -10,7 +10,13 @@ class ManufacturersController < ApplicationController
 
   def bicycle_listing
     @manufacturer = Manufacturer.find(params[:id])
-    @bike_listing = Bicycle.where(manufacturer_id: params[:id])
+    @bike_listing = @manufacturer.bicycles
+  end
+
+  def sorted
+
+    @manufacturer = Manufacturer.find(params[:id])
+    @bike_listing = @manufacturer.bicycles.order(:model)
   end
 
   def new
