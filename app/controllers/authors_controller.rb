@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
         @book_listing = Book.where(author_id: params[:id])
     end
 
-    def add
+    def create
         author = Author.new({
             name: params[:author][:name],
             age: params[:author][:age],
