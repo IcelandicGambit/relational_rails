@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <header>
   <nav>
     <%= link_to "All Manufacturers", "/manufacturers" %>
@@ -7,11 +8,12 @@
 <body>
 <h1>Bikes Made by <%= @manufacturer.name%></h1>
 <a href="/manufacturers/<%= (@manufacturer.id)%>">Go Back</a>
-<%= link_to 'Add Bicycle', "/manufacturers/#{@manufacturer.id}/bicycle_listing/new"%>
-<%= link_to 'sort', "/manufacturers/#{@manufacturer.id}/bicycle_listing/sorted"%>
+<%= link_to 'Add Bicycle', "/manufacturers/#{@manufacturer.id}/bicycles/new"%>
+<%= link_to "sort", :sort => "model"%>
 <% @bike_listing.each do |bike| %>
   <p>Model: <%=bike.model%></p>
   <p>Price: <%= bike.price %></p>
   <p>Has a rack mount?: <%= bike.has_rack_mount %></p> <br>
 <% end %>
 </body>
+</html>
