@@ -37,5 +37,3 @@ Rails.application.routes.draw do
   delete '/books/:id', to: 'books#destroy'
 
 end
-
-#manufactures#add could be create action
