@@ -1,13 +1,11 @@
-<form action="/authors" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <h2>Add An Author</h2>
-  <label for="name">Author name:</label>
-  <input type='text' name='author[name]'/><br>
-  <label for="age">Age:</label>
-  <input type="number" name='author[age]'/> <br>
-  <label for="is_alive">Is Alive?:</label>
-  <input type='text' name= 'author[is_alive]'/><br>
-  <%# <input type="checkbox" name= 'manufacturer[manufactured_in_us?]'  class="inline checkbox" id="checkbox1" value="false"><br> %>
-  <%# If the checkbox doesn't work we can use a radio buttons with true and false %>
-  <input type='submit'/>
-</form>
+<!DOCTYPE html>
+<%= form_with url: "/authors", method: :post, local: true do |form| %>
+<%=form.label :name%>
+<%=form.text_field :name%>
+<%=form.label :age%>
+<%=form.number_field :age%>
+<%=form.label :is_alive%>
+<%= form.check_box :is_alive %>
+<%= form.submit 'Create Author' %>
+<% end %>
+</html>

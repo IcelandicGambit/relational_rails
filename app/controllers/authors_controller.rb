@@ -9,10 +9,14 @@ class AuthorsController < ApplicationController
 
     def book_listing
         @author = Author.find(params[:id])
-        @book_listing = Book.where(author_id: params[:id])
+        if params[:sort] == "title"
+          @book_listing = @author.books.alphabetize
+        else
+            @book_listing = @author.books
+        end  
     end
 
-    def add
+    def create
         author = Author.new({
             name: params[:author][:name],
             age: params[:author][:age],
@@ -30,6 +34,15 @@ class AuthorsController < ApplicationController
        @author = Author.find(params[:id])
        @author.update(author_params)
        redirect_to '/authors'
+    end
+
+    def destroy
+        @author = Author.find(params[:id])
+        @author.books.each do |book|
+            book.destroy
+        end
+        @author.destroy
+        redirect_to '/authors'
     end
 
     private

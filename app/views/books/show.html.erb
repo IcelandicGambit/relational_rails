@@ -10,4 +10,6 @@
   <p>Author: <%= Author.find(@books.author_id).name %></p>
   <p>Number of Pages: <%= @books.number_of_pages %></p>
   <p>Digital?: <%= @books.digital %></p>
+  <%= link_to 'Edit', "/books/#{@books.id}/edit"%>
+  <%= button_to 'Delete', "/books/#{@books.id}", method: :delete %>
   

@@ -9,7 +9,9 @@
 <p>Age: <%= @author.age %></p>
 <p>Is alive: <%= @author.is_alive %></p> 
 <p>Number of Books: <%= @author.count_books %></p>
-<a href="/authors/<%= @author.id %>'/book_listing"> Books Written By <%= @author.name %> </a>
+<a href="/authors/<%= @author.id %>/book_listing"> Books Written By <%= @author.name %> </a>
+  <%= link_to 'Edit', "/authors/#{@author.id}/edit"%>
+  <%= button_to 'Delete', "/authors/#{@author.id}", method: :delete %>
 </body>
   
 

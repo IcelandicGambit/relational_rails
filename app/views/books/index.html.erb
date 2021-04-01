@@ -11,5 +11,6 @@
   <p>Author: <%= Author.find(book.author_id).name %></p>
   <p>Number of Pages: <%= book.number_of_pages %></p>
   <p>Digital?: <%= book.digital %></p>
+  <%= link_to 'Edit', "/books/#{book.id}/edit"%>
   
 <% end %>

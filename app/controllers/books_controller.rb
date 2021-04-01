@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @books = Book.all.is_digital
   end
 
   def show
@@ -16,6 +16,22 @@ class BooksController < ApplicationController
     author = Author.find(params[:id])
     author.books.create(book_params)
     redirect_to "/authors/#{author.id}/book_listing"
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    @book.update(book_params)
+    redirect_to "/books/#{@book.id}"
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to "/books"
   end
 
   private
