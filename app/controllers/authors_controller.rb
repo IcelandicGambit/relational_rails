@@ -9,7 +9,11 @@ class AuthorsController < ApplicationController
 
     def book_listing
         @author = Author.find(params[:id])
-        @book_listing = Book.where(author_id: params[:id])
+        if params[:sort] == "title"
+          @book_listing = @author.books.alphabetize
+        else
+            @book_listing = @author.books
+        end  
     end
 
     def create
