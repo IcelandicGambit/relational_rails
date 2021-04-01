@@ -1,7 +1,7 @@
 class ManufacturersController < ApplicationController
 
   def index
-    @manufacturers = Manufacturer.all.order('created_at DESC')
+    @manufacturers = Manufacturer.order_by_created
   end
 
   def show
@@ -11,13 +11,12 @@ class ManufacturersController < ApplicationController
   def bicycles
     @manufacturer = Manufacturer.find(params[:id])
     if params[:sort] == "model"
-      @bike_listing = @manufacturer.bicycles.order(:model)
+      @bike_listing = @manufacturer.bicycles.order_alphabetically
     else
       @bike_listing = @manufacturer.bicycles
     end
   end
 
-  
   def new
 
   end
