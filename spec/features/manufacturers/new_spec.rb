@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "manufacturers index", type: :feature do
-  it 'I can create a new manufacturers' do
+  it ' can create a new manufacturers' do
 
     visit '/manufacturers'
 

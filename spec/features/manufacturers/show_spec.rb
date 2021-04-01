@@ -17,7 +17,7 @@ RSpec.describe "manufacturers show", type: :feature do
     expect(page).to have_content(m_2.manufactured_in_us)
   end
   
-  it "it can display counted bicycles" do
+  it " can display counted bicycles" do
     m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
     m_2 = Manufacturer.create!(name: "Trek", year_founded: 1922, manufactured_in_us: false)
     b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: true)

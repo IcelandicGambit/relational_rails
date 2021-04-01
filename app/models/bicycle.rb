@@ -4,8 +4,4 @@ class Bicycle < ApplicationRecord
   def self.has_rack
     self.where(has_rack_mount: :true)
   end
-
-  # def self.sorted_alpha
-
-  # end
 end

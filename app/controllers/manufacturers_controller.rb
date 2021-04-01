@@ -1,7 +1,6 @@
 class ManufacturersController < ApplicationController
 
   def index
-    
     @manufacturers = Manufacturer.all.order('created_at DESC')
   end
 

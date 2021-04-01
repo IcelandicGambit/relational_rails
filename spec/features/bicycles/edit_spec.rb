@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "bicycles can be created", type: :feature do
+RSpec.describe "bicycles can be edited", type: :feature do
   it 'I can edit a bicycle ' do
     m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
     b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: false)
