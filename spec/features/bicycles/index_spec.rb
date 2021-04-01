@@ -18,7 +18,18 @@ RSpec.describe "bicycles index", type: :feature do
     expect(page).should have_no_content(b_2.price)
     expect(page).should have_no_content(b_2.has_rack_mount)
   end
+  it 'It has header links ' do
+    
+    visit "/bicycles"
 
+    click_link 'All Manufacturers'
+
+    expect(current_path).to eq("/manufacturers")
+
+    visit "/bicycles"
+    click_link 'All Bicycles'
+    expect(current_path).to eq("/bicycles")
+  end
   it 'I can edit a bicycle ' do
     m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
     b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: false)
@@ -39,5 +50,23 @@ RSpec.describe "bicycles index", type: :feature do
     expect(page).to have_content('Tenner')
     expect(page).to have_content('1400')
     expect(page).to have_content('true')
+  end
+  it "can delete a bicycle" do
+    m_1 = Manufacturer.create!(name: "Niner", year_founded: 1990, manufactured_in_us: true)
+    b_1 = m_1.bicycles.create!(model: "Wander Lust", price: 1990, has_rack_mount: true)
+    
+    visit "/bicycles/"
+
+    expect(page).to have_content(b_1.model)
+    expect(page).to have_content(m_1.name)
+    expect(page).to have_content(b_1.price)
+    expect(page).to have_content(b_1.has_rack_mount)
+
+    click_on 'Delete'
+
+    expect(current_path).to eq("/bicycles")
+    expect(page).should have_no_content(b_1.model)
+    expect(page).should have_no_content(b_1.price)
+    expect(page).should have_no_content(b_1.has_rack_mount)
   end
 end

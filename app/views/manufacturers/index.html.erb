@@ -11,5 +11,6 @@
 <% @manufacturers.each do |manufacturer| %>
   <h3><a href="/manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></a></h3>
   <%= link_to 'Edit', "/manufacturers/#{manufacturer.id}/edit"%>
+  <%= button_to 'Delete', "/manufacturers/#{manufacturer.id}", method: :delete %>
 <% end %>
 </html>
