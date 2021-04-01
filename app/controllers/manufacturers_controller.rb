@@ -37,7 +37,6 @@ class ManufacturersController < ApplicationController
   end
 
   def destroy
-
     bicycles= Manufacturer.find(params[:id]).bicycles
     bicycles.each do |bicycle|
       bicycle.destroy

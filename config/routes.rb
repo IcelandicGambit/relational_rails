@@ -7,15 +7,16 @@ Rails.application.routes.draw do
   post '/manufacturers', to: 'manufacturers#create'
   get '/manufacturers/:id', to: 'manufacturers#show'
   get '/manufacturers/:id/bicycles', to: 'manufacturers#bicycles'
-  # get '/manufacturers/:manufacturer_id/bicycles', to: 'sorted#sorted'
   get '/manufacturers/:id/bicycles/new', to: 'bicycles#new'
   post '/manufacturers/:id/bicycles', to: 'bicycles#create'
   delete '/manufacturers/:id', to: 'manufacturers#destroy'
+  delete '/manufacturers', to: 'manufacturers#destroy'
   get '/bicycles/', to: 'bicycles#index'
   get '/bicycles/:id', to: 'bicycles#show'
   get '/bicycles/:id/edit', to: 'bicycles#edit'
   patch '/bicycles/:id', to: 'bicycles#update'
   delete '/bicycles/:id', to: 'bicycles#destroy'
+  delete '/bicycles', to: 'bicycles#destroy'
 
 
   get '/authors', to: 'authors#index'
