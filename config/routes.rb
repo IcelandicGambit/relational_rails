@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get '/authors/:id/book_listing', to: 'authors#book_listing'
   get '/books/:id/edit', to: 'books#edit'
   patch '/books/:id', to: 'books#update'
+  patch '/authors/:id', to: 'authors#update'
+
 end
 
 #manufactures#add could be create action
