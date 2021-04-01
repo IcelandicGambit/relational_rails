@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   post '/authors', to: 'authors#create'
   get '/authors/:id/book_listing/new', to: 'books#new'
   post '/authors/:id/book_listing', to: 'books#create'
+  delete '/authors/:id', to: 'authors#destroy'
   get '/authors/:id', to: 'authors#show'
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   get '/books/:id/edit', to: 'books#edit'
   patch '/books/:id', to: 'books#update'
   patch '/authors/:id', to: 'authors#update'
+  delete '/books/:id', to: 'books#destroy'
 
 end
 
